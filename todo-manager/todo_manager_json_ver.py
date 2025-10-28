@@ -1,17 +1,24 @@
+import json
+
 # --- load and save ---
+
+# define file name constant
+TODO_FILE = 'todo.json'
 
 def load_todo():
   try:
-    with open('todo.txt', 'r') as file:
-      return [line.strip() for line in file]
+    with open(TODO_FILE, 'r') as file:
+      return json.load(file) # returns a list of strings
   except FileNotFoundError:
+    return []
+  except json.JSONDecodeError:
+    # Handle case where file exists but is empty or invalid JSON
+    print(f"'{TODO_FILE}' is corrupt or empty. Starting with an empty list.")
     return []
 
 def save_todo(todo_list):
-  with open('todo.txt', 'w') as file:
-    if todo_list:
-      for item in todo_list:
-        file.write(item + '\n')
+  with open(TODO_FILE, 'w') as file:
+    json.dump(todo_list, file, indent=2)
 
 # --- utilities ---
 

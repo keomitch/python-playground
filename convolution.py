@@ -10,11 +10,6 @@ def convolve_valid(signal, kernel):
     
     return result
 
-"""
-i -> k
-j -> m_idx
-"""
-
 # --- Full Convolution ---
 def convolve_full(signal, kernel):
   n, m = len(signal), len(kernel)

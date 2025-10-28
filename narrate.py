@@ -82,7 +82,7 @@ text = [
 ]
 
 # specific use
-'''
+
 for sentence in text:
   if sentence == text[18]:
     sleep(2)
@@ -90,4 +90,4 @@ for sentence in text:
     sleep(2)
     continue
   else: narrate(sentence, 0.02, 0.4)
-'''
+

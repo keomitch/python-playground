@@ -1,3 +1,5 @@
 Remove a key-value pair and return the value.
 Search for an element's occurrences or index.
 Delete a specific element.
+It's a nice day today!
+Well, well, well...
